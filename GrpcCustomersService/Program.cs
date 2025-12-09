@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext <Hulujan_Iulia_Petruta_proiectNouMContext> (options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")));
+        builder.Configuration.GetConnectionString("Hulujan_Iulia_Petruta_proiectNouMContext")));
 
 // Add services to the container.
 builder.Services.AddGrpc();

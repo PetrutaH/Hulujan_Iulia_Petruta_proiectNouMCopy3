@@ -11,7 +11,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Models
         public DateTime EnrollmentDate { get; set; }
         public string Email { get; set; }
 
-        public int DepartmentID { get; set; }
+        public int? DepartmentID { get; set; }
 
         public Department? Department { get; set; }
 
