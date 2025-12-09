@@ -1,0 +1,299 @@
+﻿{
+  "Scenario": "Regression",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "D:\\Master\\an1\\sem1\\Medii\\StudentPerformanceN.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Hours Studied",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Previous Scores",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Sleep Hours",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Sample Question Papers Practiced",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Performance Index",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaRegression",
+        "Score": 0.98179052283848878,
+        "RuntimeInSeconds": 1.949,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ],
+            "InputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "Performance Index",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaRegression",
+        "Score": 0.97552613268008914,
+        "RuntimeInSeconds": 1.084,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ],
+            "InputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "L1Regularization": 0.27897766,
+            "L2Regularization": 0.1716713,
+            "LabelColumnName": "Performance Index",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsPoissonRegressionRegression",
+        "Score": 0.95489820987795793,
+        "RuntimeInSeconds": 0.081,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e5",
+          "e0": {
+            "OutputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ],
+            "InputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e5": {
+            "L1Regularization": 1.2328773,
+            "L2Regularization": 3.9369082,
+            "LabelColumnName": "Performance Index",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsPoissonRegressionRegression",
+        "Score": 0.95489397687225,
+        "RuntimeInSeconds": 0.123,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e5",
+          "e0": {
+            "OutputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ],
+            "InputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e5": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "Performance Index",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.95161972340102563,
+        "RuntimeInSeconds": 0.376,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e3",
+          "e0": {
+            "OutputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ],
+            "InputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Hours Studied",
+              "Previous Scores",
+              "Sleep Hours",
+              "Sample Question Papers Practiced"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfTrees": 5,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.9420511,
+            "LabelColumnName": "Performance Index",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ReplaceMissingValues",
+      "e1": "Concatenate",
+      "e2": "FastTreeRegression",
+      "e3": "FastForestRegression",
+      "e4": "LightGbmRegression",
+      "e5": "LbfgsPoissonRegressionRegression",
+      "e6": "SdcaRegression"
+    },
+    "Schema": "e0 * e1 * (e2 + e3 + e4 + e5 + e6)",
+    "MetricName": "RSquared",
+    "ModelFilePath": "D:\\Master\\an1\\sem1\\Medii\\proiectNou\\Hulujan_Iulia_Petruta_proiectNouM\\StudentModel.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Tuner": "eci-cfo",
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 10,
+    "OptimizeMetric": "RSquared",
+    "LabelColumn": "Performance Index",
+    "AvailableTrainers": [
+      "SDCA",
+      "LBFGS",
+      "LGBM",
+      "FASTTREE",
+      "FASTFOREST"
+    ],
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}

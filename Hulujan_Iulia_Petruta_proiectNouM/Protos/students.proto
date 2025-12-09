@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcCustomersService";
+
+package student;
+
+service CustomerService {
+  rpc GetAll (Empty) returns (StudentList) {}
+  rpc Get (StudentId) returns (Student) {}
+  rpc Insert (Student) returns (Empty) {}
+  rpc Update (Student) returns (Student) {}
+  rpc Delete (StudentId) returns (Empty) {}
+}
+
+message Empty {}
+message Student {
+  int32 studentId = 1;
+  string FirstName = 2;
+  string LastName = 3;
+  string EnrollmentDate = 4;
+  string Email = 5; 
+}
+
+message StudentList {
+  repeated Student item = 1;
+}
+
+message StudentId { 
+  int32 id = 1;
+   
+}
+

@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@* Views/Prediction/StudentPerformance.cshtml - VERSIUNE CORECTATĂ *@
+
+@using static Hulujan_Iulia_Petruta_proiectNouM.StudentModel
+@model ModelInput
+
+@{
+    ViewData["Title"] = "Predicția Performanței Studenților";
+}
+
+<h2>Predicția Performanței Studenților cu ML.NET</h2>
+<hr />
+
+<form asp-action="StudentPerformance" method="post">
+    <div class="form-horizontal">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Hours_Studied" class="control-label col-md-2">Ore Studiate</label>
+            <div class="col-md-10">
+                <input asp-for="Hours_Studied" class="form-control" />
+                <span asp-validation-for="Hours_Studied" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Previous_Scores" class="control-label col-md-2">Scor Anterior</label>
+            <div class="col-md-10">
+                <input asp-for="Previous_Scores" class="form-control" />
+                <span asp-validation-for="Previous_Scores" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Sleep_Hours" class="control-label col-md-2">Ore de Somn</label>
+            <div class="col-md-10">
+                <input asp-for="Sleep_Hours" class="form-control" />
+                <span asp-validation-for="Sleep_Hours" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Sample_Question_Papers_Practiced" class="control-label col-md-2">Chestionare Exersate</label>
+            <div class="col-md-10">
+                <input asp-for="Sample_Question_Papers_Practiced" class="form-control" />
+                <span asp-validation-for="Sample_Question_Papers_Practiced" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Prezice Performanța" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr />
+
+@if (ViewBag.PerformanceIndex != null)
+{
+    <h3>Rezultat Predicție</h3>
+    <p>Index de Performanță Prezis: <strong>@ViewBag.PerformanceIndex</strong></p>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
