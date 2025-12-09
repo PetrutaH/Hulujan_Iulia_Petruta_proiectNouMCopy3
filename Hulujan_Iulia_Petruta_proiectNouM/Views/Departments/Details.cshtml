@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Hulujan_Iulia_Petruta_proiectNouM.Models.Department
+
+@{
+    ViewData["Title"] = "Details Department";
+}
+
+<h1>Department Details</h1>
+
+<div>
+    <h4>Students in this department:</h4>
+    <ul>
+        @if (Model.Students != null && Model.Students.Count > 0)
+        {
+            foreach (var s in Model.Students)
+            {
+                <li>@s.FirstName @s.LastName</li>
+            }
+        }
+        else
+        {
+            <li>No students assigned</li>
+        }
+    </ul>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
+<a asp-action="Index">Back to list</a>

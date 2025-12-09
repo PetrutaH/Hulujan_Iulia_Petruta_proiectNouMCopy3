@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Hulujan_Iulia_Petruta_proiectNouM.Models.Department
+
+@{
+    ViewData["Title"] = "Edit Department";
+}
+
+<h1>Edit</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="ID" />
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <input type="submit" value="Save" class="btn btn-primary" />
+    <a asp-action="Index" >Back to list</a>
+</form>
+
