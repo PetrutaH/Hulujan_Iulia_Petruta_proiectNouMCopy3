@@ -15,7 +15,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             _context = context;
         }
 
-        // GET: Department
+        // GET: 
         public async Task<IActionResult> Index()
         {
             var departments = await _context.Department
@@ -25,7 +25,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(departments);
         }
 
-        // GET: Department/Details/5
+        // GET: 
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
@@ -39,13 +39,13 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(department);
         }
 
-        // GET: Department/Create
+        // GET: 
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Department/Create
+        // POST: 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Name")] Department department)
@@ -60,7 +60,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(department);
         }
 
-        // GET: Department/Edit/5
+        // GET:
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -71,7 +71,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(department);
         }
 
-        // POST: Department/Edit
+        // POST: 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Name")] Department department)
@@ -98,7 +98,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(department);
         }
 
-        // GET: Department/Delete/5
+        // GET: 
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
@@ -111,7 +111,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(department);
         }
 
-        // POST: Department/Delete
+        // POST: 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

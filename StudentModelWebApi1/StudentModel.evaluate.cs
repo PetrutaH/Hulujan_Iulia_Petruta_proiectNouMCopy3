@@ -8,7 +8,7 @@ using System.Linq;
 using Plotly.NET;
 using Plotly.NET.LayoutObjects;
 
-namespace Hulujan_Iulia_Petruta_proiectNouM
+namespace StudentModelWebApi1
 {
     public partial class StudentModel
     {

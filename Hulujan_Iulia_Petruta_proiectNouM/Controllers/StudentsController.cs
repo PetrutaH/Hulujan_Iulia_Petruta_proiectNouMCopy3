@@ -19,7 +19,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             _context = context;
         }
 
-        // GET: Students
+        // GET: 
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             ViewData["LastNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -55,7 +55,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(await students.ToListAsync());
         }
 
-        // GET: Students/Details/5
+        // GET: 
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -79,16 +79,14 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(student);
         }
 
-        // GET: Students/Create
+        // GET:
         public IActionResult Create()
         {
             ViewData["DepartmentID"] = new SelectList(_context.Set<Department>(), "ID", "Name");
             return View();
         }
 
-        // POST: Students/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       //Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FirstName,LastName,EnrollmentDate,Email,DepartmentID")] Student student)
@@ -111,7 +109,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(student);
         }
 
-        // GET: Students/Edit/5
+        // GET: 
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -130,9 +128,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(student);
         }
 
-        // POST: Students/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditPost(int? id)
@@ -165,7 +161,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(studentToUpdate);
         }
 
-        // GET: Students/Delete/5
+        // GET: 
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -184,7 +180,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
             return View(student);
         }
 
-        // POST: Students/Delete/5
+        // POST: 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

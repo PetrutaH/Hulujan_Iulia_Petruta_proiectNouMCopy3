@@ -81,7 +81,7 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            PopulateDropdowns(courseEnrollment); // Repopulează în caz de eroare
+            PopulateDropdowns(courseEnrollment); 
             return View(courseEnrollment);
         }
 

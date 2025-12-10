@@ -1,12 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Hulujan_Iulia_Petruta_proiectNouM.Data;
+using Hulujan_Iulia_Petruta_proiectNouM.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<Hulujan_Iulia_Petruta_proiectNouMContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Hulujan_Iulia_Petruta_proiectNouMContext") ?? throw new InvalidOperationException("Connection string 'Hulujan_Iulia_Petruta_proiectNouMContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient<IStudentPredictionService, StudentPredictionService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:50737"); 
+});
 
 var app = builder.Build();
 

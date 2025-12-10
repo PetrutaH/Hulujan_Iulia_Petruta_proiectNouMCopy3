@@ -8,9 +8,6 @@ using System.Threading.Tasks;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
-
-namespace Hulujan_Iulia_Petruta_proiectNouM
-{
     public partial class StudentModel
     {
         public const string RetrainFilePath =  @"D:\Master\an1\sem1\Medii\StudentPerformanceN.csv";
@@ -96,4 +93,4 @@ namespace Hulujan_Iulia_Petruta_proiectNouM
             return pipeline;
         }
     }
- }
+ 
