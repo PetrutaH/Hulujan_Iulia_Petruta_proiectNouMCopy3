@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Hulujan_Iulia_Petruta_proiectNouM.Models.CourseEnrollment
+
+@{
+    ViewData["Title"] = "Detalii Notă";
+}
+
+<h1>Detalii Notă</h1>
+
+<div>
+    <h4>Înregistrare Curs</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Student:</dt>
+        <dd class="col-sm-9">
+            @(Model.Student?.LastName) @(Model.Student?.FirstName)
+        </dd>
+
+        <dt class="col-sm-3">Curs:</dt>
+        <dd class="col-sm-9">
+            @(Model.Course?.Title)
+        </dd>
+
+        <dt class="col-sm-3">Notă:</dt>
+        <dd class="col-sm-9">
+            <strong>@(Model.GradeType?.Grade)</strong> (@(Model.GradeType?.Description))
+        </dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.EnrollmentDate)</dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EnrollmentDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CourseEnrollmentID">Edit</a> |
+    <a asp-action="Index">Back to list</a>
+</div>

@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Hulujan_Iulia_Petruta_proiectNouM.Models.CourseEnrollment
+
+@{
+    ViewData["Title"] = "Șterge Notă";
+}
+
+<h1>Șterge Notă</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Student:</dt>
+        <dd class="col-sm-9">
+            @(Model.Student?.LastName) @(Model.Student?.FirstName)
+        </dd>
+
+        <dt class="col-sm-3">Curs:</dt>
+        <dd class="col-sm-9">
+            @(Model.Course?.Title)
+        </dd>
+
+        <dt class="col-sm-3">Notă:</dt>
+        <dd class="col-sm-9">
+            <strong>@(Model.GradeType?.Grade)</strong> (@(Model.GradeType?.Description))
+        </dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.EnrollmentDate)</dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EnrollmentDate)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CourseEnrollmentID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

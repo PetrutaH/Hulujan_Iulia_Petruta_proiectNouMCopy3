@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Hulujan_Iulia_Petruta_proiectNouM.Models.CourseEnrollment>
+
+@{
+    ViewData["Title"] = "Istoric Note Studenți";
+}
+
+<h1>Istoric Note Studenți</h1>
+
+<p>
+    <a asp-action="Create" >Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Curs</th>
+            <th>Nota</th>
+            <th>@Html.DisplayNameFor(model => model.EnrollmentDate)</th>
+            <th>Operațiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @(item.Student?.LastName) @(item.Student?.FirstName)
+                </td>
+                <td>
+                    @(item.Course?.Title)
+                </td>
+                <td>
+                    <strong>@(item.GradeType?.Grade)</strong>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CourseEnrollmentID" >Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CourseEnrollmentID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CourseEnrollmentID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

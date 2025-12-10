@@ -31,9 +31,15 @@ namespace Hulujan_Iulia_Petruta_proiectNouM.Data
                 var gradeTypes = new GradeType[]
                 {
                     new GradeType { Grade = "10", Description = "Excelent" },
-                    new GradeType { Grade = "8", Description = "Foarte Bine" },
+                    new GradeType { Grade = "9", Description = "Foarte Bine" }, 
+                    new GradeType { Grade = "8", Description = "Bine" },
+                    new GradeType { Grade = "7", Description = "Suficient" },
+                    new GradeType { Grade = "6", Description = "Minim de Trecere" }, 
                     new GradeType { Grade = "5", Description = "Admis" },
-                    new GradeType { Grade = "4", Description = "Restant" }
+                    new GradeType { Grade = "4", Description = "Restant" },
+                    new GradeType { Grade = "3", Description = "Eșec" }, 
+                    new GradeType { Grade = "2", Description = "Eșec Sever" }, 
+                    new GradeType { Grade = "1", Description = "Eșec Major" }
                 };
                 context.GradeType.AddRange(gradeTypes);
                 context.SaveChanges();
